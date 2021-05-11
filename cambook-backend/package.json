@@ -4,11 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "typescript -p .",
-    "dev": "NODE_ENV=dev nodemon -r tsconfig-paths/register src/server.ts",
+    "build": "tsc -p .",
+    "dev": "NODE_ENV=dev nodemon -r tsconfig-paths/register dist/server.js",
     "test": "NODE_ENV=test mocha --check-leaks -r tsconfig-paths/register -r ts-node/register \"test/**/*.spec.ts\""
   },
-  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
