@@ -14,7 +14,7 @@ https://www.youtube.com/watch?v=61L8AcmYTyM
 Node testing in general (unit and integration):<br>
 https://blog.logrocket.com/unit-and-integration-testing-for-node-js-apps/
 
-Framework for testing ui::<br>
+Framework for testing ui:<br>
 https://www.cypress.io/features
 
 Dockers docs on nodejs:<br>
