@@ -17,6 +17,9 @@ https://blog.logrocket.com/unit-and-integration-testing-for-node-js-apps/
 Framework for testing ui:<br>
 https://www.cypress.io/features
 
+Type orm github:<br>
+https://github.com/typeorm/typeorm
+
 Dockers docs on nodejs:<br>
 https://docs.docker.com/language/nodejs/build-images/
 
