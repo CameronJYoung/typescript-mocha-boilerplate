@@ -1,16 +1,26 @@
 version: '3.7'
 
-services: 
-  ts-node-docker:
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: stripe-example
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+  backend:
     build:
       context: .
       dockerfile: dockerfile
       target: base
-    volumes: 
-      - ./src:/usr/src/app/src
+    depends_on:
+      - db
     container_name: cambook-backend-server
     expose:
-      - '4000'
+      - '3000'
     ports:
-      - '4000:4000'
+      - '3000:3000'
     command: npm run dev
