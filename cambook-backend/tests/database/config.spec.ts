@@ -1,6 +1,6 @@
 //import { expect } from 'chai';
 
-import connection from '../../src/config/db.connection'
+import connection from '../../src/config/db.connection' // typeORM for the database
 
 describe('db config checks', () => {
 
