@@ -17,7 +17,7 @@ describe('db config checks', () => {
 		done();
 	});
 
-	it('connection doesnt return error', (done) => {
+	it('testing api connection to db', (done) => {
 		const testConnection = connection(config);
 		expect(testConnection.isConnected).to.be.true;
 		
