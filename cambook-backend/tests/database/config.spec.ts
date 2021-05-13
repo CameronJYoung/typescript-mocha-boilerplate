@@ -1,15 +1,28 @@
-//import { expect } from 'chai';
+import { expect, should } from 'chai';
 
-import connection from '../../src/config/db.connection' // typeORM for the database
+import config from '../../src/config/db.config';
+import connection from '../../src/config/db.connection';
 
 describe('db config checks', () => {
-	it('config has correct information', (done) => {
-
+	it('config has correct typeORM keys', (done) => { // potentially not needed as typescript won't compile if it has the incorrect keys (does specify the postgres keys tho)
+		expect(config).to.have.all.keys([
+			'type',
+			'host',
+			'port',
+			'username',
+			'password',
+			'database'
+		]);
+		
+		done();
 	});
-	it('connects to db successfully', (done) => {
 
+	it('connection doesnt return error', (done) => {
+		const testConnection = connection(config);
+		expect(testConnection.isConnected).to.be.true;
+		
+		done();
 	});
-	it('db can close successfully', (done) => {
 
-	});
+
 });
