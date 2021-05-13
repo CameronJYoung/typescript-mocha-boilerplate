@@ -1,14 +1,12 @@
-import { createConnection } from 'typeorm';
+import { Connection, createConnection } from 'typeorm';
 
 import config from './db.config';
 
-const connection = createConnection(config).then(connect => {
-	console.log(2);
-	console.log(connect);
+const connection: Connection = createConnection(config).then(connect => {
 	
 	return connect;
 }).catch(error => {
-	return error;
+	console.log(error);
 });
 
 export default connection;
