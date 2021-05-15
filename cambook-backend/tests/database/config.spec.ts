@@ -1,4 +1,5 @@
 import { expect, should } from 'chai';
+import { Connection } from 'typeorm';
 
 import config from '../../src/config/db.config';
 import connection from '../../src/config/db.connection';
@@ -18,9 +19,13 @@ describe('db config checks', () => {
 	});
 
 	it('testing api connection to db', (done) => {
-		const testConnection = connection(config);
-		expect(testConnection.isConnected).to.be.true;
+		connection.then((conn) => {
+			expect(conn.isConnected).to.be.true;
+		}).catch((err) => {
+			console.log(err);
+		});
 		
+
 		done();
 	});
 
